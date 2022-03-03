@@ -1,28 +1,11 @@
-[
-      {
-         "id":1,
-         "email":"zahraa.choumane",
-         "pwd":"123",
-         "first_name":"zahraa",
-         "last_name":"choumane",
-         "company":"Beirut",
-         "mobile":"+96178942470",
-         "address":"beirut,city",
-         "image":"",
-         "type":"admin"
-      },
-      {
-        "id":1,
-        "email":"zahraa.ch",
-        "pwd":"567",
-        "first_name":"zahraa",
-        "last_name":"ch",
-        "company":"Beirut",
-        "mobile":"+96178945676",
-        "address":"beirut,city",
-        "image":"",
-        "type":"Nadmin"
-     }
-    ] 
+
+   {
+      "choumane":
+      {"id":"1","email":"choumane","pwd":"1234","first_name":"123","last_name":"123","company":"123","mobile":"123","address":"123","image":"123","role":"admin"},
+
+      "test":
+      {"id":"0df5ee0e-9b9d-4cfe-8d13-15919b2edfc2","email":"test","pwd":"123","first_name":"test","last_name":"test","company":"test","mobile":"test","address":"test","image":"","role":"user"}
+   }
+      
    
    

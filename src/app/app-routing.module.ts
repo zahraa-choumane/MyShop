@@ -19,7 +19,9 @@ const routes: Routes = [{path: '' ,component:LoginComponent},
 {path: 'login' ,component:LoginComponent},
 {path: 'profile' ,component:ProfileComponent},
 {path: 'signup' ,component:SignUpComponent},
-{path: 'Admin' ,component:AdminComponent},
+{path: 'Admin' ,component:AdminComponent,canActivate:[AuthGuard],data: {
+  role: 'admin'
+}},
 {path: 'add' ,component:AddProductComponent},
 {path: 'edit' ,component:EditProductComponent},
 { path: '**', redirectTo: '' },

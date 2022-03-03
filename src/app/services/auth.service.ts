@@ -36,7 +36,7 @@ export class AuthService {
   //IsLoggedIn(){
   //  return !!localStorage.getItem('token');
   //}
-    loginuser(email:string,pwd:string)
+    loginuser(email:string,pwd:string,role: string)
       {
   
      const headers=new HttpHeaders()
@@ -50,7 +50,9 @@ export class AuthService {
        // this.httpclient.get('http://localhost:3000/token/sign').subscribe((res:any)=>{
            
           localStorage.setItem("access_token",res["token"]);
+          localStorage.setItem("role",role);
           this.setUserStatus(res["token"]);
+
                this.router.navigate(["/products"]);
                console.log("valid");
           
@@ -58,6 +60,11 @@ export class AuthService {
   
   
       }
+      getRole() {
+        
+        return  localStorage.getItem('role');
+       }
+   
    
      /* public signup(email:string, pwd:string,cfpwd:string,fist_name:string,last_name:string,mobile:string,address:string){
     
@@ -87,6 +94,7 @@ export class AuthService {
   
       logout(){
         localStorage.removeItem("access_token");
+        localStorage.removeItem("role");
         this.setUserStatus(null);
         this.router.navigate(["/login"]);
       }

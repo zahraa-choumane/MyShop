@@ -6,6 +6,10 @@ const fs = require('fs');
 const dataPathUser = './model/user.json' // path to our JSON file
 const dataPathProduct = './model/product.json' // path to our JSON file
 
+
+
+
+
 // util functions User
 const saveUserData = (data) => {
     const stringifyData = JSON.stringify(data)
@@ -30,15 +34,13 @@ Routes.get('/user', (req, res) => {
 
 Routes.post('/user/adduser', (req, res) => {
  
-  var existUser = getUserData()
-  const newUsertId = Math.floor(100000 + Math.random() * 900000)
- 
-  existUser[newUsertId] = req.body
-   
-  console.log(existUser);
-
-  saveUserData(existUser);
+  
+  var existUsers = getUserData()
+  const newUsertId = req.body.email
+  existUsers[newUsertId] = req.body
+  saveUserData(existUsers);
   res.send({success: true, msg: 'account data added successfully'})
+   
 })
 
 
@@ -74,18 +76,27 @@ Routes.delete('/user/delete/:id', (req, res) => {
  }, true);
 })
 
-function readUsers() {
-  const dbRaw = fs.readFileSync(dataPathUser);  
-  const users = JSON.parse(dbRaw)
-  return users;
-}
-Routes.post('/login',(req,res)=>{
-  const user = readUsers();
-  
-  const users = user.filter(x=>x.email==req.body.email && x.pwd==req.body.pwd);
-  res.send(users);
+
+Routes.get('/user/:id',(req,res)=>{
+  const user = getUserData();
+  res.send(user[req.params["id"]]);
   
 })
+
+
+Routes.post('/login',(req,res)=>{
+    const user = getUserData();
+    if(user[req.body.email]){
+      const users = user[req.body.email];
+      if(users.email==req.body.email &&users.pwd==req.body.pwd){
+        res.send(users);
+      }
+    }
+   
+   
+    
+})
+
 
 // util functions Product
 const saveProductData = (data) => {
@@ -106,6 +117,7 @@ Routes.get('/product', (req, res) => {
     res.send(JSON.parse(data));
   });
 });
+
 function readProducts() {
   const dbRaw = fs.readFileSync(dataPathProduct);  
   const products = JSON.parse(dbRaw)

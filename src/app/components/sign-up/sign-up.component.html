@@ -3,7 +3,7 @@
     <div class="row justify-content-center text-center">
         <div class="col-lg-8 col-12 mb-4">
             <h1 class="text-start">REGISTER</h1>
-            <form [formGroup]="signupform" (ngSubmit)="submit()"  method="POST">
+            <form [formGroup]="loginform" (ngSubmit)="submit()"  method="POST">
                 <div class="col-lg-12 mt-4">
                     <input class="form-control w-100" placeholder="EMAIL*" type="text" formControlName="email"  />
                 </div>
@@ -21,7 +21,9 @@
                         <input class="form-control w-100 col-lg-6" placeholder="LAST NAME*" type="text" formControlName="last_name"  />
                     </div>
                 </div>
-                
+                <div class="col-lg-12  mt-4">
+                    <input class="form-control w-100" placeholder="COMPANY" type="text" formControlName="copany"  />
+                </div>
                 <div class="row  mt-4">
                     <div class="col-lg-12 mt-3 mt-lg-0">
                         <input class="form-control w-100 col-lg-12" placeholder="PHONR NUMBER*" type="text" formControlName="mobile"  />
@@ -37,11 +39,10 @@
                   
                
                 <div class="col-lg-12  mt-4">
-                    <button type="submit" class="w-100 btn btn-primary">SUBMIT</button>
+                    <button type="submit" class="w-100 btn btn-primary">SUBNIT</button>
                 </div>
             </form>
         </div>
     </div>
 </div>
-
-
+<app-root></app-root>

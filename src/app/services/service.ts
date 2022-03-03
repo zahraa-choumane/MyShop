@@ -8,6 +8,7 @@ import { Console } from 'console';
 import { Observable, observable } from 'rxjs';
 import product from '../model/product';
 import User from '../model/user';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -41,6 +42,10 @@ export class Service {
         
       return  this.httpclient.post('http://localhost:3000/login',user,{headers});
 
+    }
+    adduser(user:User){
+      const headers=new HttpHeaders().set('Content-Type','application/json');
+      return this.httpclient.post('http://localhost:3000/user/adduser',JSON.stringify(user),{headers});
     }
  /*   signupuser(email:string,pwd:string,cfpwd:string,first_name:string,last_name:string,mobile:string,address:string)
     {

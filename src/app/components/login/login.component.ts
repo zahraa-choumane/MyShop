@@ -43,7 +43,7 @@ export class LoginComponent implements OnInit {
           (res:any)=>{
             console.log("sdsd: ",res[0])
             if(res[0]!=null){
-              this.authService.loginuser(users,pwds);
+              this.authService.loginuser(users,pwds,res.role);
             }
           }
         );
