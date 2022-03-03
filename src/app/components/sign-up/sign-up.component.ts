@@ -51,7 +51,6 @@ export class SignUpComponent implements OnInit {
       var address=this.signupform.get('address')?.value;
       var signupuser;
    // this.apiservice*/
-    console.log("Form Submitted")
     console.log(this.signupform.value)
   }}
 
