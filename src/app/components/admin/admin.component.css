@@ -1,0 +1,14 @@
+.container
+{
+    align-items: center;
+    padding: 130px 0px;
+}
+
+h6
+{
+    font-size: 30px;
+}
+.btn{
+    background-color: lightslategray;  
+    border-color: lightslategray;
+}

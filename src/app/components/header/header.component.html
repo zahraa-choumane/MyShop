@@ -1,0 +1,15 @@
+<header >
+    <div class="nav-bar">
+        <div class="logo">
+            <p>E-comerce</p>
+        </div>
+        <ul>
+            <li *ngIf="service.isAuthenticated()"><a routerLink="/products">Product</a></li>
+            <li *ngIf="service.isAuthenticated()" ><a href="/cart">cart</a></li>
+            <li *ngIf="service.isAuthenticated()"><a href="/profile">Profile</a></li>
+            <li *ngIf="service.isAuthenticated()"><a style="cursor: pointer;" (click)= "onLogout()" >Logout</a></li>
+            <li *ngIf="service.isAuthenticated()"><a href="/Admin">admin</a></li>
+           
+        </ul>
+    </div>
+</header>

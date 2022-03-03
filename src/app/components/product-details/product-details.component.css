@@ -1,0 +1,15 @@
+.img
+{
+    object-fit: cover;
+    width: 100%;
+}
+
+ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+.btn{
+    background-color: lightslategray;  
+    border-color: pink;
+}

@@ -1,0 +1,23 @@
+.container
+{
+    align-items: center;
+    padding: 130px 0px;
+}
+
+h6
+{
+    font-size: 30px;
+}
+.btn{
+    background-color: lightslategray;  
+    border-color: lightslategray;
+}
+
+.div {
+    margin-bottom: 10px;
+  }
+.label {
+    display: inline-block;
+    width: 150px;
+    text-align: right;
+  }

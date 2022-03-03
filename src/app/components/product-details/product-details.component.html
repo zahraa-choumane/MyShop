@@ -1,0 +1,35 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-4">
+            <img alt="img" src="{{item[0].image}}" class="img" />
+        </div>
+        <div class="col-lg-8">
+            <h5>{{item[0].title}}</h5>
+            <h3>{{item[0].description}}</h3>
+            <h2>{{item[0].price}}</h2>
+            <form [formGroup]="productform"  (ngSubmit)="submit()">
+                <label>Size : </label>
+                <select class="form-control w-50 mb-3" formControlName="size">
+                    <option [ngValue]="null" disabled>Choose Size</option>
+                    <option value="1">Large</option>
+                    <option value="2">Small</option>
+                    <option value="3">Meduim</option>
+                </select>
+                <br />
+                <label>Color : </label>
+                <select class="form-control w-50 mb-3"  formControlName="color">
+                    <option  [ngValue]="null" disabled>Choose Color</option>
+                    <option value="1">Red</option>
+                    <option value="2">Black</option>
+                    <option value="3">Blue</option>
+                </select>
+                
+                <label>Quantiter :</label>
+                <input type="number" formControlName="quantiter" class="form-control w-25">
+                <br />
+                <button type="submit" routerLink="/products" class="btn btn-primary">Submit</button>
+            </form>
+            
+        </div>
+    </div>
+</div>
