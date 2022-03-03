@@ -1,11 +1,1 @@
-
-   {
-      "choumane":
-      {"id":"1","email":"choumane","pwd":"1234","first_name":"123","last_name":"123","company":"123","mobile":"123","address":"123","image":"123","role":"admin"},
-
-      "test":
-      {"id":"0df5ee0e-9b9d-4cfe-8d13-15919b2edfc2","email":"test","pwd":"123","first_name":"test","last_name":"test","company":"test","mobile":"test","address":"test","image":"","role":"user"}
-   }
-      
-   
-   
+{"choumane":{"id":"1","email":"choumane","pwd":"1234","first_name":"123","last_name":"123","company":"123","mobile":"123","address":"123","image":"123","role":"admin"},"test":{"id":"0df5ee0e-9b9d-4cfe-8d13-15919b2edfc2","email":"test","pwd":"123","first_name":"test","last_name":"test","company":"test","mobile":"test","address":"test","image":"","role":"user"},"zahraa":{"id":"71591d17-04b4-4874-b602-fdeaae2099de","email":"zahraa","pwd":"12345","first_name":"zahraa","last_name":"choumane","company":"inmind","mobile":"78942470","address":"beirut","image":""}}
