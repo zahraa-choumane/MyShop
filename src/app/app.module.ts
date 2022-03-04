@@ -19,7 +19,8 @@ import { AuthGuard } from './services/auth.guard';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { AdminComponent } from './components/admin/admin.component';
 import { EditProductComponent } from './components/edit-product/edit-product.component';
-import { AddProductComponent } from './components/add-product/add-product.component';
+import { AddProductComponent } from './components/admin/add-product/add-product.component';
+import { ListComponent } from './components/admin/list/list.component';
 //export function tokenGetter(){
  // return localStorage.getItem('access_token');
 //}
@@ -41,7 +42,8 @@ export function tokengetter()
     SignUpComponent,
     AdminComponent,
     EditProductComponent,
-    AddProductComponent
+    AddProductComponent,
+    ListComponent
   ],
   imports: [
     BrowserModule,

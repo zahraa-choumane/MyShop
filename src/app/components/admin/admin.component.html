@@ -1,33 +1,9 @@
-<H1>Hello Admin</H1>
 <div class="container mt-5">
-    <div class="row">
-        <div class="col-lg-8 col-md-6 col-12">
-            <label>Add products:</label>
-            <button type="submit" routerLink="/add" class="btn btn-primary mt-3 w-100"><a style="color:pink">ADD</a> </button>
-            <br />
-            
-            <label>Edit products :</label>
-            <form class="mt-4" [formGroup]="Adminform" (ngSubmit)="submit()">
-                <input class="form-control mt-3"  type="text" formControlName="edit"  />
-                <div *ngIf="edit.invalid"  class="alert alert-danger m-3">
-                    <div *ngIf="edit.errors?.['required'] "class="alert alert-danger ">Id is required .</div>
-                </div>
-            <button type="submit" class="btn btn-primary mt-3 w-100"><a style="color:pink">Edit</a> </button>
-            
-       </form>
-            <label>Delete products :</label>
-            <form class="mt-4" [formGroup]="Deleteform" (ngSubmit)="sub()">
-                <input class="form-control mt-3"  type="text" formControlName="delete"  />
-                <div *ngIf="delete.invalid"  class="alert alert-danger m-3">
-                    <div *ngIf="delete.errors?.['required'] "class="alert alert-danger ">Id is required .</div>
-                </div>
-            <button type="submit" class="btn btn-primary mt-3 w-100"><a style="color:pink">Delete</a> </button>
-            
-       </form>
-            
-            <br />
-           
-            
+    <div class="row mb-5" >
+        <div class="col-4" >
+                <a href="/admin/add" class="btn btn-success w-75">Add</a>
         </div>
     </div>
+   
+        <app-list *ngFor="let item of items" (deleteevents)="deleteproduct($event)" [product]="item"   ></app-list>  
 </div>

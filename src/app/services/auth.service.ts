@@ -20,7 +20,7 @@ export class AuthService {
       const token = localStorage.getItem('access_token');
       if(token!=null)
       {
-      return true
+      return !this.jwtHelper.isTokenExpired(token);
       }else{
         return false;
       }
@@ -50,6 +50,7 @@ export class AuthService {
        // this.httpclient.get('http://localhost:3000/token/sign').subscribe((res:any)=>{
            
           localStorage.setItem("access_token",res["token"]);
+          localStorage.setItem("users",email);
           localStorage.setItem("role",role);
           this.setUserStatus(res["token"]);
 
@@ -96,6 +97,7 @@ export class AuthService {
         localStorage.removeItem("access_token");
         localStorage.removeItem("role");
         this.setUserStatus(null);
+        localStorage.removeItem("user");
         this.router.navigate(["/login"]);
       }
   }

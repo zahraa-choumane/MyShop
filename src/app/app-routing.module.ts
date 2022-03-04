@@ -10,7 +10,7 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { AuthGuard } from './services/auth.guard';
 import { AdminComponent } from './components/admin/admin.component';
 import { EditProductComponent } from './components/edit-product/edit-product.component';
-import { AddProductComponent } from './components/add-product/add-product.component';
+import { AddProductComponent } from './components/admin/add-product/add-product.component';
 import { HeaderComponent } from './components/header/header.component';
 const routes: Routes = [{path: '' ,component:LoginComponent},
 {path: 'products' ,component:ProductsComponent},
@@ -20,6 +20,9 @@ const routes: Routes = [{path: '' ,component:LoginComponent},
 {path: 'profile' ,component:ProfileComponent,canActivate:[AuthGuard]},
 {path: 'signup' ,component:SignUpComponent},
 {path: 'admin' ,component:AdminComponent,canActivate:[AuthGuard],data: {
+  role: 'admin'
+}},
+{path:'admin/edit/:id',component:EditProductComponent,canActivate:[AuthGuard],data: {
   role: 'admin'
 }},
 {path: 'add' ,component:AddProductComponent},

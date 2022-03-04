@@ -1,1 +1,36 @@
-<p>edit-product works!</p>
+<div class="container mt-5">
+    <form [formGroup]="editform" (ngSubmit)="submit()"  method="POST">
+    <div class="row">
+        <div class="col-lg-4">
+            <img alt="img" src="{{item[0].image}}" class="img w-100" />
+        <br />
+        <br />
+        <br />
+        <div>
+            <label for="files" class="btn btn-danger">Select Image</label>
+            <input id="files" style="visibility:hidden;" type="file" formControlName="image">
+          </div>       
+         </div>
+        <div class="col-lg-8">
+                
+                <label>Name </label>
+                <input class="form-control w-100"  type="text" formControlName="name" />
+                <br />
+                <label>Description </label>
+                <input class="form-control w-100"  type="text" formControlName="description" />
+                <br />
+        
+                <label>Quantiter :</label>
+                <input type="number"  class="form-control w-25" formControlName="qt">
+                <br />
+                <label>Price </label>
+                <input class="form-control w-25"   type="text" formControlName="price" />
+                <br />
+                <button type="submit" class="btn btn-primary">Edit</button>
+            
+            
+        </div>
+    
+    </div>
+</form>
+</div>

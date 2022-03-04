@@ -1,0 +1,17 @@
+<div class="row m-3">
+    <div class="col-2">
+        <h5>{{product.id}}</h5>
+    </div>
+    <div class="col-2">
+        <h5>{{product.title}}</h5>
+    </div>
+    <div class="col-2">
+        <h5>{{product.price}}</h5>
+    </div>
+    <div class="col-3">
+        <a  href="/admin/edit/{{product.id}}" class="btn btn-primary">Edit</a>
+    </div>
+    <div class="col-3">
+        <button class="btn btn-danger" (click)="delete()">Delete</button>
+    </div>
+    </div>

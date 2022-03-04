@@ -29,7 +29,11 @@ export class Service {
       return this.httpclient.get<product>("http://localhost:3000/product/"+id);
 
     }
-    
+    getuser(email:string)
+    {
+      return this.httpclient.get<User>("http://localhost:3000/user/"+email);
+
+    }
 
     loginuser(email:string,pwd:string)
     {
@@ -47,6 +51,27 @@ export class Service {
       const headers=new HttpHeaders().set('Content-Type','application/json');
       return this.httpclient.post('http://localhost:3000/user/adduser',JSON.stringify(user),{headers});
     }
+    addproduct(product:product)
+    {
+      const headers=new HttpHeaders().set('Content-Type','application/json');
+      return  this.httpclient.post('http://localhost:3000/product/addproduct',JSON.stringify(product),{headers});
+         
+    }
+
+    editproduct(product:product)
+    {
+      const headers=new HttpHeaders().set('Content-Type','application/json');
+      return  this.httpclient.post('http://localhost:3000/product/editroduct',JSON.stringify(product),{headers});
+         
+    }
+
+    deleteproduct(id:string)
+    {
+      return  this.httpclient.get('http://localhost:3000/product/delete/'+id);
+
+    }
+
+}
  /*   signupuser(email:string,pwd:string,cfpwd:string,first_name:string,last_name:string,mobile:string,address:string)
     {
       const headers=new HttpHeaders().set('Content-Type','application/json');
@@ -74,4 +99,4 @@ export class Service {
       
     }
 */
-}
+
