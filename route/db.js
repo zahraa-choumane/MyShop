@@ -1,7 +1,8 @@
 const express = require("express")
 const Routes = express.Router();
 const fs = require('fs');
-const{filter}=requiew("rxjs");
+const { filter } = require("rxjs");
+
 
 const dataPathUser = './model/user.json' // path to our JSON file
 const dataPathProduct = './model/product.json' // path to our JSON file
@@ -101,6 +102,7 @@ Routes.post('/login',(req,res)=>{
 // util functions Product
 const saveProductData = (data) => {
   const stringifyData = JSON.stringify(data)
+  
   fs.writeFileSync(dataPathProduct, stringifyData)
 }
 const getProductData = () => {
@@ -136,12 +138,10 @@ res.send(Products)
 Routes.post('/product/addproduct', (req, res) => {
  
   var existProduct = getProductData()
+
   existProduct.push(req.body)
-
    
-  console.log(existProduct);
-
-  saveProductData(existPorduct);
+  saveProductData(existProduct);
   res.send({success: true, msg: 'account data added successfully'})
 })
 
@@ -154,18 +154,20 @@ Routes.get('/product/list', (req, res) => {
 
 
 // Update - using Put method
-Routes.post('/product/editproduct', (req, res) => {
-  var existProducts = getProductData().filter(x=>x.id!=req.params['id'])
-   saveProductData(existProducts);
-   res.send({success: true, msg: 'account data added successfully'})
+Routes.post('/product/editroduct', (req, res) => {
+  var existProduct = getProductData().filter(x=>x.id!=req.body.id);
+  existProduct.push(req.body);
+  saveProductData(existProduct);
+  res.send({success: true, msg: 'account data added successfully'})
 
   
 });
+
 //delete - using delete method
 Routes.get('/product/delete/:id', (req, res) => {
-  var existProduct = getProductData().filter(x=>x.id!=req.params['id'])
-  saveProductData(existProduct);
- res.send(`accounts with id  has been deleted`);
+   var existProduct = getProductData().filter(x=>x.id!=req.params['id'])
+   saveProductData(existProduct);
+  res.send(`accounts with id  has been deleted`);
 })
 
 
