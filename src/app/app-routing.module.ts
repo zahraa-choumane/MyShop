@@ -4,12 +4,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { ProductsComponent } from './components/products/products.component';
 import { ProductDetailsComponent} from './components/product-details/product-details.component';
 import { CartComponent } from './components/cart/cart.component';
-import { LoginComponent } from './components/login/login.component';
+import { LoginComponent } from './components/auth/login/login.component';
 import { ProfileComponent } from './components/profile/profile.component';
-import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { SignUpComponent } from './components/auth/sign-up/sign-up.component';
 import { AuthGuard } from './services/auth.guard';
 import { AdminComponent } from './components/admin/admin.component';
-import { EditProductComponent } from './components/edit-product/edit-product.component';
+import { EditProductComponent } from './components/admin/edit-product/edit-product.component';
 import { AddProductComponent } from './components/admin/add-product/add-product.component';
 import { HeaderComponent } from './components/header/header.component';
 const routes: Routes = [{path: '' ,component:LoginComponent},

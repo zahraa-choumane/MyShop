@@ -9,16 +9,16 @@ import { ProductListComponent } from './components/product-list/product-list.com
 import { ProductsComponent } from './components/products/products.component';
 import { HeaderComponent } from './components/header/header.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
-import { LoginComponent } from './components/login/login.component';
+import { LoginComponent } from './components/auth/login/login.component';
 import { CartComponent } from './components/cart/cart.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { SignUpComponent } from './components/auth/sign-up/sign-up.component';
 import { AuthInterceptorService } from './auth-interceptor.service';
 import { AuthGuard } from './services/auth.guard';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { AdminComponent } from './components/admin/admin.component';
-import { EditProductComponent } from './components/edit-product/edit-product.component';
+import { EditProductComponent } from './components/admin/edit-product/edit-product.component';
 import { AddProductComponent } from './components/admin/add-product/add-product.component';
 import { ListComponent } from './components/admin/list/list.component';
 //export function tokenGetter(){

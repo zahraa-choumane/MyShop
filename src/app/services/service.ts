@@ -72,31 +72,4 @@ export class Service {
     }
 
 }
- /*   signupuser(email:string,pwd:string,cfpwd:string,first_name:string,last_name:string,mobile:string,address:string)
-    {
-      const headers=new HttpHeaders().set('Content-Type','application/json');
-      let user=
-      {
-        email:email,
-        pwd:pwd,
-        cfpwd:cfpwd,
-        first_name:first_name,
-        last_name:last_name,
-        mobile:mobile,
-        address:address
-      }
-        
-      return  this.httpclient.post('http://localhost:3000/signup',user,{headers});
-
-    }
-/*
-    adduser(user:User)
-    {
-      
-      
-      db.user.push({id:2,email:user.email,pwd:user.pwd,first_name:user.first_name,last_name:user.last_name,company:user.company,mobile:user.mobile,address:user.address,image:user.image});
-       
-      
-    }
-*/
-
+ 
