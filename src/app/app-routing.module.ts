@@ -11,7 +11,7 @@ import { AuthGuard } from './services/auth.guard';
 import { AdminComponent } from './components/admin/admin.component';
 import { EditProductComponent } from './components/admin/edit-product/edit-product.component';
 import { AddProductComponent } from './components/admin/add-product/add-product.component';
-import { HeaderComponent } from './components/header/header.component';
+
 const routes: Routes = [{path: '' ,component:LoginComponent},
 {path: 'products' ,component:ProductsComponent},
 {path: 'detail/:id' ,component:ProductDetailsComponent},

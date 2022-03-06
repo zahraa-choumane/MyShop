@@ -1,10 +1,5 @@
 import { Injectable, Input } from '@angular/core';
-import dbproduct from '../../../model/product.json';
-import dbuser from '../../../model/user.json';
 import { HttpClient , HttpHeaders} from '@angular/common/http';
-import { Router } from 'express';
-import { json } from 'body-parser';
-import { Console } from 'console';
 import { Observable, observable } from 'rxjs';
 import product from '../model/product';
 import User from '../model/user';
